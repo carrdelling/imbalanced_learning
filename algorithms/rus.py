@@ -1,5 +1,3 @@
-import sys
-import os
 import numpy as np
 from utils.data import *
 
@@ -15,15 +13,15 @@ def rus(X, Y, num_pos, num_neg, ratio):
     np.random.shuffle(selection)
 
     c_neg = 0
-    for af_id in Y:
-        if Y[af_id] != 1:
+    for sample_id in Y:
+        if Y[sample_id] != 1:
             if selection[c_neg] == 1:
-                _Y[af_id] = Y[af_id]
-                _X[af_id] = X[af_id]
+                _Y[sample_id] = Y[sample_id]
+                _X[sample_id] = X[sample_id]
             c_neg += 1
         else:
-            _Y[af_id] = Y[af_id]
-            _X[af_id] = X[af_id]
+            _Y[sample_id] = Y[sample_id]
+            _X[sample_id] = X[sample_id]
 
     return _X, _Y, num_pos, hold
 
@@ -37,9 +35,9 @@ if __name__ == '__main__':
 
     os.makedirs(path)
 
-    programs = ['53f476220189604629c2662d']
+    problems = ['1']
 
-    for p in programs:
+    for p in problems:
 
         X, Y, num_pos, num_neg = read_data(p)
 

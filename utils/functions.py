@@ -3,6 +3,7 @@ from math import sqrt
 
 cache = {}
 
+
 def similarity(a, b, X):
     if a not in cache or b not in cache[a]:
         if a not in cache:
@@ -17,7 +18,8 @@ def similarity(a, b, X):
 
 
 def cosine_similarity(first, second):
-    "compute cosine similarity of first to second: (v1 dot v2)/(||v1||*||v2||)"
+    # "compute cosine similarity of first to second: (v1 dot v2)/(
+    # ||v1||*||v2||)"
 
     a_set = set(first.keys())
     b_set = set(second.keys())
