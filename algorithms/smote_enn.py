@@ -1,6 +1,3 @@
-import sys
-import os
-import numpy as np
 from utils.data import *
 from utils.functions import *
 from smote import smote
