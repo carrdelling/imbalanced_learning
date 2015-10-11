@@ -32,6 +32,7 @@ class Reader(object):
 
 
 class PlainTextReader(Reader):
+
     def parse_file(self, input_path, separator=','):
 
         n_columns = None
@@ -61,6 +62,7 @@ class PlainTextReader(Reader):
 
 
 class ArffReader(Reader):
+
     def parse_file(self, input_path):
 
         reading_data = False
